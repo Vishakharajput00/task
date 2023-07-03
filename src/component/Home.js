@@ -14,7 +14,7 @@ const Home = () => {
   const handleImageClick = (image) => {
       setOpen(true);
     setSelectedImage(image);
-    console.log(selectedImage,'selectwdimage')
+    // console.log(selectedImage,'selectwdimage')
   };
 const [open, setOpen] = React.useState(false);
 
@@ -37,7 +37,7 @@ const [open, setOpen] = React.useState(false);
         url:'http://localhost:3000/bankdata'
       });
       if(res){
-        console.log(res,'res----')
+        // console.log(res,'res----')
 setCards(res.data)
 setLoading(false);
       }
@@ -48,14 +48,7 @@ setLoading(false);
     }
   }
  
- 
 
-  useEffect(() => {
-    setTimeout(() => {
-      data()
-    }, 1000);
-
-  }, [])
   
   const handleDragStart = (e, index) => {
     e.dataTransfer.setData('text/plain', index);
@@ -65,7 +58,7 @@ setLoading(false);
     e.preventDefault();
   };
 
-  
+  const [lastUpdateTime, setLastUpdateTime] = useState(null);
 
   const handleDrop =async(e, index) => {
     const cardIndex = e.dataTransfer.getData('text/plain');
@@ -73,31 +66,55 @@ setLoading(false);
     const cardToMove = updatedCards[cardIndex];
     updatedCards.splice(cardIndex, 1);
     updatedCards.splice(index, 0, cardToMove);
-console.log("dsffge--------------",updatedCards)
+// console.log("dsffge--------------",updatedCards)
     setCards(updatedCards);
     
-  for(const i in updatedCards){
-    const{id,title,type,position}=updatedCards[i]
-    await axios.delete(`http://localhost:3000/bankdata/${id}`)
-    await axios.post('http://localhost:3000/bankdata',{id,title,type,position})
-    // setCards(updatedCards)
+ if(updatedCards){
+  setTimeout(async() => {
+    for(const i in updatedCards){
+      const{id,title,type,position}=updatedCards[i]
+      await axios.delete(`http://localhost:3000/bankdata/${id}`)
+      await axios.post('http://localhost:3000/bankdata',{id,title,type,position})
+      // setCards(updatedCards)
+  
+  
+    }
+   
+    const timestamp = new Date().getTime();
+    setLastUpdateTime(timestamp);
+    localStorage.setItem('lastUpdateTime', timestamp);
+    // alert("data changed ")
+  }, 5000);
+  
+ }
 
-
-  }
-  alert("data changed ")
 
 
   };
+  let time;
 
+  useEffect(() => {
+    setTimeout(() => {
+      data()
+      const storedTimestamp = localStorage.getItem('lastUpdateTime');
+      if (storedTimestamp) {
+        setLastUpdateTime(parseInt(storedTimestamp));
+      }
+    }, 1000);
+
+  }, [])
   return (
    <>
     {loading ? (
         <CircularProgress /> 
       ) : (
         <div>
+          <p>Last update: {new Date(lastUpdateTime).toLocaleTimeString()}</p>
+
            <Grid container spacing={2}>
      {cards && (
       <>
+      
        {cards.map((card, index) => (
         <Grid item key={index} xs={12} sm={6} md={4} lg={4}>
           <div

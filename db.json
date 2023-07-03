@@ -17,34 +17,35 @@
     "name": "typicode"
   },
   "bankdata": [
-    {"id":1,
-      "type": "img/cars.jpg",
+    {
+      "id": 3,
+      "title": "Invoice",
+      "type": "img/image4.avif",
+      "position": 2
+    },
+    {
+      "id": 5,
+      "title": "Bill of Lading 2",
+      "type": "img/image1.jpg",
+      "position": 4
+    },
+    {
+      "id": 1,
       "title": "Bank Draft",
+      "type": "img/image2.avif",
       "position": 0
     },
     {
-      "id":2,
-      "type": "img/grocery.jpg",
+      "id": 2,
       "title": "Bill of Lading",
+      "type": "img/image3.jpg",
       "position": 1
     },
     {
-      "id":3,
-      "type": "img/mobile.png",
-      "title": "Invoice",
-      "position": 2
-    },
-    {"id":4,
-      "type": "img/electronic.webp",
+      "id": 4,
       "title": "Bank Draft 2",
+      "type": "img/image5.png",
       "position": 3
-    },
-    {
-      
-      "id":5,
-      "type": "img/beauty.webp",
-      "title": "Bill of Lading 2",
-      "position": 4
     }
   ]
 }
