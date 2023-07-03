@@ -1,0 +1,50 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "title": "json-server",
+      "author": "typicode"
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  },
+  "bankdata": [
+    {"id":1,
+      "type": "img/cars.jpg",
+      "title": "Bank Draft",
+      "position": 0
+    },
+    {
+      "id":2,
+      "type": "img/grocery.jpg",
+      "title": "Bill of Lading",
+      "position": 1
+    },
+    {
+      "id":3,
+      "type": "img/mobile.png",
+      "title": "Invoice",
+      "position": 2
+    },
+    {"id":4,
+      "type": "img/electronic.webp",
+      "title": "Bank Draft 2",
+      "position": 3
+    },
+    {
+      
+      "id":5,
+      "type": "img/beauty.webp",
+      "title": "Bill of Lading 2",
+      "position": 4
+    }
+  ]
+}
