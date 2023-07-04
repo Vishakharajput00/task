@@ -92,7 +92,7 @@ setLoading(false);
     
         try{
           const res = await axios({
-            method:"delete",
+            method:"POST",
             url:'http://localhost:3000/bankdata',
             data:{
               id,title,type,position
