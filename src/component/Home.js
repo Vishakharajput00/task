@@ -73,39 +73,8 @@ setLoading(false);
   setTimeout(async() => {
     for(const i in updatedCards){
       const{id,title,type,position}=updatedCards[i]
-      const DeletebyId = async ()=>{
-      
-    
-        try{
-          const res = await axios({
-            method:"delete",
-            url:`http://localhost:3000/bankdata/${id}`
-          });
-             
-        }catch(error){
-          console.log(error)
-          setLoading(false);
-        }
-      }
-      const updateData = async ()=>{
-      
-    
-        try{
-          const res = await axios({
-            method:"POST",
-            url:'http://localhost:3000/bankdata',
-            data:{
-              id,title,type,position
-            }
-          });
-             
-        }catch(error){
-          console.log(error)
-          setLoading(false);
-        }
-      }
-      // await axios.delete(`http://localhost:3000/bankdata/${id}`)
-      // await axios.post('http://localhost:3000/bankdata',{id,title,type,position})
+      await axios.delete(`http://localhost:3000/bankdata/${id}`)
+      await axios.post('http://localhost:3000/bankdata',{id,title,type,position})
       // setCards(updatedCards)
   
   
