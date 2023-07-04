@@ -18,16 +18,16 @@
   },
   "bankdata": [
     {
+      "id": 2,
+      "title": "Bill of Lading",
+      "type": "img/image3.jpg",
+      "position": 1
+    },
+    {
       "id": 3,
       "title": "Invoice",
       "type": "img/image4.avif",
       "position": 2
-    },
-    {
-      "id": 5,
-      "title": "Bill of Lading 2",
-      "type": "img/image1.jpg",
-      "position": 4
     },
     {
       "id": 1,
@@ -36,16 +36,16 @@
       "position": 0
     },
     {
-      "id": 2,
-      "title": "Bill of Lading",
-      "type": "img/image3.jpg",
-      "position": 1
-    },
-    {
       "id": 4,
       "title": "Bank Draft 2",
       "type": "img/image5.png",
       "position": 3
+    },
+    {
+      "id": 5,
+      "title": "Bill of Lading 2",
+      "type": "img/image1.jpg",
+      "position": 4
     }
   ]
 }
