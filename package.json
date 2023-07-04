@@ -1,5 +1,8 @@
 {
   "name": "netfix",
+    
+"homepage": "https://Vishakharajput00.github.io/Vishakharajput00/task",
+  
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -16,6 +19,8 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "start": "react-scripts start",
     "startdev": "json-server --watch db.json",
     "build": "react-scripts build",
@@ -39,5 +44,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "gh-pages": "^5.0.0"
   }
 }
