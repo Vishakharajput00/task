@@ -24,28 +24,28 @@
       "position": 4
     },
     {
-      "id": 3,
-      "title": "Invoice",
-      "type": "img/image4.avif",
-      "position": 2
-    },
-    {
       "id": 6,
       "title": "Bank Draft 2",
       "type": "img/image3.jpg",
       "position": 1
     },
     {
-      "id": 4,
-      "title": "Bank Draft 2",
-      "type": "img/image5.png",
-      "position": 3
-    },
-    {
       "id": 7,
       "title": "Bank Draft 2",
       "type": "img/image2.avif",
       "position": 5
+    },
+    {
+      "id": 3,
+      "title": "Invoice",
+      "type": "img/image4.avif",
+      "position": 2
+    },
+    {
+      "id": 4,
+      "title": "Bank Draft 2",
+      "type": "img/image5.png",
+      "position": 3
     }
   ]
 }
